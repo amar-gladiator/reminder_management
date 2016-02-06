@@ -26,7 +26,9 @@ gem 'bootstrap_form'
 gem 'bootstrap-datepicker-rails'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
-
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails'
+gem 'will_paginate'
 #client side validation
 gem 'simple_form'
 gem 'client_side_validations'

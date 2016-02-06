@@ -18,12 +18,16 @@
 //= require bootstrap-datetimepicker
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require dataTables/jquery.dataTables
 //= require_tree .
 
 
   $(document).ready(function(){
    	$('.datepicker').datepicker();
     $('.datetimepicker').datetimepicker();
+   $('#groups').dataTable({
+   	   SpaginationType: "full_numbers" ,
+   	   bJQueryUI: true
+   });
+    
   });
-
- 
