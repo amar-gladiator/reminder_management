@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Groups</h1>
-
-<table>
+<% javascript_include_tag 'datatable' %>
+<div class="container">
+<table id="groups" class="display">
   <thead>
     <tr>
       <th>Name</th>
       <th>Status</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>Contact</th>
+      <th>Action</th>
+      <th>Action</th>
+      <th>Action</th>
     </tr>
   </thead>
 
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.name %></td>
+        <td><%= group.name.titleize%></td>
         <td><%= group.status %></td>
-        <td><%= group.user %></td>
+        <td><%= group.contact %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,5 +27,12 @@
 </table>
 
 <br>
+<div class="pull-right">
+<%#= link_to 'New Group', new_group_path, class: 'btn btn-success' %>
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to "Create Group", new_group_path, :class => "btn", :remote => true, class: "btn btn-info" %>
+</div>
+</div>
+<div id="myModal" class="modal fade custom"></div>
+
+
