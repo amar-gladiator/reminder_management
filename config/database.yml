@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: remainder_management_development
-  username: amar
-  password: amar
+  username: ajinath
+  password: ajinath
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -85,3 +85,5 @@ production:
   database: remainder_management_production
   username: remainder_management
   password: <%= ENV['REMAINDER_MANAGEMENT_DATABASE_PASSWORD'] %>
+
+
