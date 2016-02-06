@@ -1,4 +1,12 @@
-<% javascript_include_tag 'datatable' %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#groups').dataTable({
+       SpaginationType: "full_numbers" ,
+       bJQueryUI: true,
+       bDestroy: true
+   });
+});
+</script>
 <div class="container">
 <table id="groups" class="display">
   <thead>
@@ -6,7 +14,6 @@
       <th>Name</th>
       <th>Status</th>
       <th>Contact</th>
-      <th>Action</th>
       <th>Action</th>
       <th>Action</th>
     </tr>
@@ -18,9 +25,9 @@
         <td><%= group.name.titleize%></td>
         <td><%= group.status %></td>
         <td><%= group.contact %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to edit_icon, edit_group_path(group), remote: true %></td>
+        <td><%= link_to delete_icon, group, method: :delete, data: { confirm: 'Are you sure?'} %>
+        </td>
       </tr>
     <% end %>
   </tbody>

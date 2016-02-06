@@ -1,4 +1,5 @@
 /*
+ 
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -17,5 +18,8 @@
  *= require_self
  *= require bootstrap-datepicker3
  *= require bootstrap-datetimepicker
+ *= require font-awesome
  */
- 
+ .edit-icon{
+ 	padding: 5px 30px 5px 30px;
+ }

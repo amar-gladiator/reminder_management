@@ -33,6 +33,7 @@ gem 'will_paginate'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem "font-awesome-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

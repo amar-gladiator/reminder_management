@@ -25,9 +25,4 @@
   $(document).ready(function(){
    	$('.datepicker').datepicker();
     $('.datetimepicker').datetimepicker();
-   $('#groups').dataTable({
-   	   SpaginationType: "full_numbers" ,
-   	   bJQueryUI: true
-   });
-    
   });
