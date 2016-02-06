@@ -13,7 +13,6 @@ $(document).ready(function(){
     <tr>
       <th>Name</th>
       <th>Status</th>
-      <th>Contact</th>
       <th>Action</th>
       <th>Action</th>
     </tr>
@@ -24,7 +23,6 @@ $(document).ready(function(){
       <tr>
         <td><%= group.name.titleize%></td>
         <td><%= group.status %></td>
-        <td><%= group.contact %></td>
         <td><%= link_to edit_icon, edit_group_path(group), remote: true %></td>
         <td><%= link_to delete_icon, group, method: :delete, data: { confirm: 'Are you sure?'} %>
         </td>
@@ -37,7 +35,7 @@ $(document).ready(function(){
 <div class="pull-right">
 <%#= link_to 'New Group', new_group_path, class: 'btn btn-success' %>
 
-<%= link_to "Create Group", new_group_path, :class => "btn", :remote => true, class: "btn btn-info" %>
+<%= link_to "Create Group", new_group_path, class: "btn btn-info" %>
 </div>
 </div>
 <div id="myModal" class="modal fade custom"></div>

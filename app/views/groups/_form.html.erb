@@ -1,18 +1,38 @@
+<%= nested_form_for(@group, html: { class: "form-horizontal"} )do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+     <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+    <ul>
+    <% @group.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %> 
+  
+  <div class="form-group"> 
+    <!-- <label class="control-label col-sm-3" for="email">Group Name:</label> -->
+    <div class="col-sm-12">
+      <%= f.text_field :name, :class => "form-control",  placeholder: "Enter Group name"%>
+    </div>
+  </div>
+  <br>
+  <%= f.hidden_field :user_id, value: current_user %>
 
-      <%= bootstrap_form_for(@group) do |f| %>
-        <% if @group.errors.any? %>
-          <div id="error_explanation">
-           <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-          <ul>
-          <% @group.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+  <%= f.fields_for :group_memberships do |ff| %>
+      <div class="form-group"> 
+        <div class="col-sm-5">
+          <%= ff.text_field :user_id, :class => "form-control",  placeholder: "Enter Member name"%>
         </div>
-      <% end %>  
-      <%= f.text_field :name %>
-      <%= f.text_field :contact %>
-      <%= f.text_field :user_id %>
-      <%= f.submit class: "btn btn-success"%>  
-    <% end %> 
+        <div class="col-sm-5">
+         <%= ff.text_field :role_id, :class => "form-control",  placeholder: "Enter Contact number"%>
+        </div>
+        <div class="col-sm-2">
+           <%= ff.link_to_remove "Remove", class: "btn btn-danger form-control"%>
+        </div>
+      </div>
+  <% end %>
+     
+  <%= f.link_to_add "Add Group Member", :group_memberships, class: "btn btn-warning pull-right"%>
+  <%= f.submit class: "btn btn-success"%> 
+<% end %> 
